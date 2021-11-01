@@ -1,3 +1,5 @@
+package groupB
+
 import munit.FunSuite
 
 import PatternMatching._

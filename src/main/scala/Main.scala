@@ -1,3 +1,6 @@
+import groupA._
+import groupB._
+
 @main
 def Main(args: String*): Unit =
   runExample("Trait Params")(TraitParams.test())

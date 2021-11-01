@@ -1,3 +1,5 @@
+package groupB
+
 import scala.language.strictEquality
 
 /**

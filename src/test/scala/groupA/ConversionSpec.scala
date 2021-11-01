@@ -1,3 +1,5 @@
+package groupA
+
 import munit.FunSuite
 import Conversion._
 

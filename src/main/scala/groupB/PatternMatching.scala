@@ -1,3 +1,5 @@
+package groupB
+
 /**
   * Pattern Matching: https://dotty.epfl.ch/docs/reference/changed-features/pattern-matching.html
   */

@@ -1,3 +1,5 @@
+package groupA
+
 import scala.language.implicitConversions
 
 /**
