@@ -1,4 +1,4 @@
-# Example sbt project that demos code coverage in Scala 3
+# Scala 3 code coverage demo
 
 ## Usage
 
