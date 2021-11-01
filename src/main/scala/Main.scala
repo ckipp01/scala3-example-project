@@ -4,9 +4,9 @@ def Main(args: String*): Unit =
 
   runExample("Enum Types")(EnumTypes.test())
 
-  runExample("Context Functions")(ContextFunctions.test())
+  //runExample("Context Functions")(ContextFunctions.test())
 
-  runExample("Given Instances")(GivenInstances.test())
+  //runExample("Given Instances")(GivenInstances.test())
 
   runExample("Conversion")(Conversion.test())
 

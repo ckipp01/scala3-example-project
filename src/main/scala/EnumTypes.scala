@@ -23,16 +23,19 @@ object  EnumTypes:
     case Neptune extends Planet(1.024e+26, 2.4746e7)
   end Planet
 
+  def calculateEarthWeightOnPlanets(earthWeight: Double) =
+    val mass = earthWeight/Planet.Earth.surfaceGravity
+
+    Planet.values.map { p =>
+      println(s"Your weight on $p is ${p.surfaceWeight(mass)}")
+      (p, p.surfaceWeight(mass))
+    }.toVector
+
   def test(): Unit =
     val emptyList = ListEnum.Empty
     val list = ListEnum.Cons(1, ListEnum.Cons(2, ListEnum.Cons(3, ListEnum.Empty)))
     println("Example 1: \n"+emptyList)
     println(s"${list}\n")
-
-    def calculateEarthWeightOnPlanets(earthWeight: Double) =
-      val mass = earthWeight/Planet.Earth.surfaceGravity
-      for p <- Planet.values do
-        println(s"Your weight on $p is ${p.surfaceWeight(mass)}")
 
     println("Example 2:")
     calculateEarthWeightOnPlanets(80)

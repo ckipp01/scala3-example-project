@@ -45,6 +45,11 @@ object PatternMatching:
     object Name:
       def unapply(s: String): Name = Name(s)
 
+  // https://dotty.epfl.ch/docs/reference/changed-features/vararg-splices.html
+  def containsConsecutive(list: List[Int]): Boolean = list match 
+    case List(a, b, xs*)   => a == b || containsConsecutive(b :: xs.toList)
+    case Nil | List(_, _*) => false
+
 
   def test(): Unit =
     import booleanPattern.*
@@ -52,11 +57,6 @@ object PatternMatching:
     "even" match
       case s @ Even() => println(s"$s has an even number of characters")
       case s          => println(s"$s has an odd number of characters")
-
-    // https://dotty.epfl.ch/docs/reference/changed-features/vararg-splices.html
-    def containsConsecutive(list: List[Int]): Boolean = list match 
-      case List(a, b, xs*)   => a == b || containsConsecutive(b :: xs.toList)
-      case Nil | List(_, _*) => false
 
     println(containsConsecutive(List(1, 2, 3, 4, 5)))
     println(containsConsecutive(List(1, 2, 3, 3, 5)))
